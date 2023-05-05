@@ -88,13 +88,11 @@ function loadJson() {
         var file = files[0];
         var reader = new FileReader();
         reader.onloadend = function(){
-            var result = atob(reader.result.split(',')[1]);
+            var result = reader.result;
 
             if (!result) {
                 return;
             }
-
-            console.log('result', result);
 
             var settings = JSON.parse(result);
 
@@ -119,7 +117,7 @@ function loadJson() {
             loadPage();
             drawImage();
         }
-        reader.readAsDataURL(file);
+        reader.readAsText(file, 'UTF-8');
     }
 }
 
