@@ -21,6 +21,10 @@ function loadPage(){
         if(key.startsWith("card-")){
             var elem = document.getElementById(key);
             if(elem != null){
+                if (key === 'card-background') {
+                    elem.value = val === 'Treasure' ? 'Door' : 'Treasure';
+                    return;
+                }
                 elem.value = val;
             }
         }
