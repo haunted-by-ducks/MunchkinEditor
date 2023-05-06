@@ -1,0 +1,18 @@
+name: deploy
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Set git configs
+              run: |
+                  git config --local user.email "$(git log --format='%ae' HEAD^!)"
+                  git config --local user.name "$(git log --format='%an' HEAD^!)"
+            - name: deploy to github pages
+              run: git push --force origin main:gh-pages

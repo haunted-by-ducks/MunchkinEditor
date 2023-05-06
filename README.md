@@ -2,6 +2,8 @@
 
 Create high-quality custom cards for the [Munchkin](https://munchkin.game/) card game!
 
+Can be used here: https://haunted-by-ducks.github.io/MunchkinEditor/
+
 For example:
 
 <img src="https://github.com/tidoe/MunchkinEditor/blob/main/preview.png" height="500"/>
